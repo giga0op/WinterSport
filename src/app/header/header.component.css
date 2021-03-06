@@ -1,0 +1,223 @@
+.header {
+    background-color: transparent;
+    position: absolute;
+    width: 80%;
+    z-index: 3;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px 0;
+
+  }
+
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  .header ul li{
+  }
+
+  .header li a {
+    display: block;
+    padding: 20px 20px 4px 20px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+
+
+  .header .logo {
+    color: #1790b5;
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 2px 0px;
+    text-decoration: none;
+  }
+
+  /* =====================================menu=============================== */
+
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+
+  /* ===================================menu icon =============================*/
+
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  /* =========================================menu btn ========================================*/
+
+  .header .menu-btn {
+    display: none;
+  }
+
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  /*==================================== section================================ */
+
+  .section {
+    overflow: hidden;
+    margin: auto;
+    max-width: 1400px;
+  }
+
+  .section a {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+
+  .section a img {
+    width: 100%;
+    display: block;
+  }
+
+  .section a span {
+    color: #fff;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-size: 2em;
+    text-shadow: 1px 1px 0 #000;
+  }
+
+  .section-split a span {
+    display: none;
+  }
+
+  .section-split a:hover span {
+    display: block;
+  }
+
+  ul li ul{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+
+  }
+  ul li ul li{
+    position: relative;
+    margin: 0px;
+    margin-top: 0px;
+    width: 160px;
+    height: 60px;
+    float: none;
+    border-bottom: 1px solid #80fff2;
+  }
+
+ul li:hover > ul{
+  opacity: 1;
+  visibility: visible;
+  transition:1s;
+}
+
+span{
+  position: relative;
+  bottom: 3px;
+  font-size: 15px;
+}
+
+  /* 48em = 768px */
+
+  @media (min-width: 875px) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 0px 0px 0px;
+      margin-left: 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+  /* 48em = 768px */
+
+  @media (max-width: 343px) {
+    .header .logo {
+      color: #1790b5;
+      display: block;
+      float: left;
+      font-size: 30px;
+      padding: 8px 0px;
+      text-decoration: none;
+    }
+  }
+
+
+@media (max-width: 874px) {
+  .header ul {
+    background-color: #1e1f27;
+    opacity: 0.9;
+    border-radius: 3px;
+  }
+
+  ul li ul {
+    background-color: #181921;
+    opacity: 2;
+    border-radius: 1px;
+  }
+}

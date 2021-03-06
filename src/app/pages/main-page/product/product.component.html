@@ -1,0 +1,116 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="g">
+  <button *ngFor="let product of productNames" class="active" type="button" class="btn btn-outline-dark" routerLink="/product/{{product.id}}"  (click)="loadProducts(product.id)">{{ product.name }}</button>
+    <input (change)="loadProducts(null, $event.target.checked)" type="checkbox" id="check" name="check" value="" />
+    <label for="check">
+      <span></span>ახალი
+    </label>
+  </div>
+</div>
+
+
+<section>
+  <div class="product-card" *ngFor="let product of products">
+    <div class="product-front">
+      <img src= "data:image/png;base64,{{ product.img }}"  width="298px" height="331px" alt="" />
+      <div class="stats">
+        <div class="stats-container">
+<!--          <p *ngIf="!product.isNew == true; else elseBlock">ახალი</p>-->
+<!--          <ng-template #elseBlock>მეორადი</ng-template>-->
+          <span class="product_price">{{ product.salePrice }} $</span>
+          <span class="product_name">{{ product.name }}</span>
+          <p>{{ product.info | slice:0:30 }}...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-5" *ngIf="products == 0">მარაგში არ არის</div>
+
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="product-card">-->
+<!--    <div class="product-front">-->
+<!--      <img src="http://demo1.wpopal.com/snowboard/wp-content/uploads/2016/01/product-8-600x667.jpg" width="298px" height="331px" alt="" />-->
+<!--      <div class="stats">-->
+<!--        <div class="stats-container">-->
+<!--          <span class="product_price">$393</span>-->
+<!--          <span class="product_name">name</span>-->
+<!--          <p>description</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+</section>
+
+
+

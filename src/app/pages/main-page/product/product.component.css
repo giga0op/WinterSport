@@ -1,0 +1,153 @@
+section{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 30px;
+
+}
+
+.product-card{
+  width:298px;
+  height:440px;
+  position: initial;
+  top:0;
+  left:100px;
+  overflow:hidden;
+  margin: 10px;
+  -webkit-transition:  100ms ease-out;
+  -moz-transition:  100ms ease-out;
+  -o-transition:  100ms ease-out;
+  transition:  100ms ease-out;
+}
+
+
+.stats-container{
+  background: #9793a9;
+  margin-top: -10px;
+  width:298px;
+  height:auto;
+  padding:27px 35px 35px;
+  -webkit-transition: all 200ms ease-out;
+  -moz-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.stats-container .product_name{
+  font-size:22px;
+  color:white;
+}
+.stats-container p{
+  font-size:16px;
+  color:white;
+  padding:2px 0 20px 0;
+  width: 170px;
+}
+.stats-container .product_price{
+  float:right;
+  color:#48cfad;
+  font-size:22px;
+  font-weight:600;
+}
+
+
+@media only screen and (max-width: 1589px) {
+  section{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+/*================================Filtre=====================================*/
+button{
+  margin-right: 5px;
+  outline: none;
+}
+button:hover,
+button.active {
+  color: #1790b5;
+  outline: none;
+}
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+.btn:hover{
+  color: #1790b5;
+  background-color: #ffffff;
+  border-color: #1790b5; /*set the color you want here*/
+}
+
+label {
+  display: inline-block;
+  color: black;
+  cursor: pointer;
+  position: relative;
+}
+label span {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  transform-origin: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  vertical-align: -10px;
+  margin-right: 10px;
+  transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+}
+label span:before {
+  content: "";
+  width: 0px;
+  height: 2px;
+  border-radius: 1px;
+  background: green;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 12px;
+  left: 9px;
+  transition: width 50ms ease 50ms;
+  transform-origin: 0% 0%;
+}
+label span:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: green;
+  position: absolute;
+  transform: rotate(305deg);
+  top: 16px;
+  left: 10px;
+  transition: width 50ms ease;
+  transform-origin: 0% 0%;
+}
+label:hover span:before {
+  width: 5px;
+  transition: width 100ms ease;
+}
+label:hover span:after {
+  width: 10px;
+  transition: width 150ms ease 100ms;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox]:checked + label span {
+  background-color: #fff;
+  transform: scale(1.25);
+}
+input[type=checkbox]:checked + label span:after {
+  width: 10px;
+  background: #1790b5;
+  transition: width 150ms ease 100ms;
+}
+input[type=checkbox]:checked + label span:before {
+  width: 5px;
+  background: #1790b5;
+  transition: width 150ms ease 100ms;
+}

@@ -1,0 +1,20 @@
+<header class="header">
+  <a class="logo" href="#">WINTER SPORT</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a routerLink="/" class="link link-theme link-arrow">მთავარ</a></li>
+    <li><a routerLink="/" class="link link-theme link-arrow">პროდუქცია <span class="fa fa-sort-down"  aria-hidden="true"></span></a>
+      <ul>
+        <li *ngFor="let prodName of prodNames" class="left"><a [routerLink]="['product',prodName.id]">{{ prodName.name }}</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="/about" class="link link-theme link-arrow">ჩვენს შესახებ</a></li>
+    <li><a href="#four" class="link link-theme link-arrow">კონტაქტი</a></li>
+  </ul>
+</header>
+<div>
+
+</div>
+
+
